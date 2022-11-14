@@ -1,0 +1,30 @@
+@font-face {
+	font-family: 'Montserrat', sans-serif;
+	src: url(fonts/Montserrat-VariableFont_wght.ttf);
+ }
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+body {
+	line-height: 1;
+}
+
+button{
+	background: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:visited{
+}
+
+html{
+	scroll-behavior: smooth;
+}

@@ -1,0 +1,81 @@
+/* HEADER COMO UM TODO */
+.main-header{
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 100vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #023047;
+
+    padding: 10px 1vw;
+
+    border-bottom: 6px solid #FB8500;
+}
+
+.text-header{
+    color: #FB8500;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.text-header:visited{
+    color: #FB8500;
+}
+
+/* ICONE */
+.icon-header{
+    width: 33%;
+    display: flex;
+    justify-self: flex-start;
+}
+
+.icon{
+    width: 60px;
+    height: 90%;
+}
+
+/* NAVIGATION MENU MEIO */
+.nav-header{
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+}
+
+
+/* BOTÕES LOGIN E CADASTRO */
+.buttons-header{
+    width: 33%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 7px;
+}
+
+.btn-nav{
+    width: 200px;
+
+    border-radius: 5px;
+    border: 1px solid #FB8500;
+
+    padding: 3px 5px;
+
+    cursor: pointer;
+}
+
+.btn-inverso{
+    background-color: #FB8500;
+    color: #023047;
+}
+
+nav a:hover{
+    color: #219EBC;
+}
+
+.btn-inverso:hover{
+    background-color: #023047;
+    color: #FB8500;
+}

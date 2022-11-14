@@ -1,0 +1,20 @@
+<!--<tr>
+                          <td align="center"><?php echo $linha["cnpj"]; ?></td>
+                            <td><?php echo $linha["nome"]; ?></td>
+                            <td><?php echo $linha["fk_telefone_telefone_PK"]; ?></td>
+                            <td><?php echo $linha["email"]; ?></td>
+                            <td><?php echo $linha["fk_endereco_CEP"]; ?></td>
+                            <td><?php echo $linha["numero_da_propriedade"]; ?></td>
+                            <td><?php echo $linha["complemento"]; ?></td>
+                            <td align="center">
+                                <a href="dados.php?manut=A&cnpj=<?php echo $linha["cnpj"]; ?>">
+                                    <img align="center" width="20px" height="20px" src="img/alterar.png" alt="Alterar"/>
+                                </a>
+                            </td>
+                            <td align="center">
+                                <a href="dados.php?manut=E&cnpj=<?php echo $linha["cnpj"]; ?>">
+                                    <img align="center" width="20px" height="20px" src="img/excluir.png" alt="Excluir"/>
+                                </a>
+                            </td>
+                        </tr>
+                        -->

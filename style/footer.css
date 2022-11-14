@@ -1,0 +1,40 @@
+footer{
+    /* margin-top: 10vh; */
+    background-color: #023047;
+
+    padding-top: 15vh;
+}
+
+.footer-line{
+    border-top: 1px solid #FFF;
+
+    width: 50vw;
+    margin: auto;
+}
+
+.social-icon-wrapper{
+    padding-top: 8vh;
+
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+
+    margin-bottom: 3vh;
+}
+
+.social-icon{
+    width: 1.6vw;
+    height: 1.6vw;
+}
+
+.foot-text{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    font-size: 90%;
+    font-style: italic;
+
+    padding-bottom: 5vh;    
+    color: #FFF;
+}

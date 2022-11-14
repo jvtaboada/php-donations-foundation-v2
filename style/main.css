@@ -1,0 +1,113 @@
+/* PÁGINA COMO UM TODO  */
+.main-section{
+    background-color: #FFFAFA;
+    margin-top: 9vh;
+}
+
+.nav-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1vw;
+
+    padding-top: 2vh;
+
+    font-weight: bold;
+    font-size: 150%;
+    color:#FFB703;
+}
+
+.no-visited{
+    color: #000;
+}
+
+.big-title{
+    font-size: 3.5rem;
+    font-weight: 700;
+
+    padding: 3vh 1vw;
+}
+
+/* SEÇÃO IDEIA */
+
+#section-ideia{
+    padding-bottom: 5vh;
+}
+
+.ideia-icon{
+    width: 9vh;
+}
+
+.ideia-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ideia-text{
+    text-align: center;
+    font-size: 140%;
+}
+
+/* SEÇÃO SOBRE */
+#section-sobre{
+    background-color: #FFB703;
+}
+
+.sobre-title{
+    padding-right: 8vw;
+    text-align: end;
+}
+
+.card-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+
+    padding-bottom: 3vh;
+}
+
+.card-integrante{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icone-integrante{
+    width: 18vw;
+    height: 18vw;
+
+    border: 3px solid #000;
+    border-radius: 50%;
+}
+
+.desc-integrante{
+    padding-top: 2vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 130%;
+}
+
+/* SEÇÃO PARCEIROS */
+#section-parceiros{
+    padding: 2vh 0 5vh 0;
+}
+
+.parceiros-title{
+    font-size: 2rem;
+}
+
+.parceiros-wrapper{
+    display: flex;
+    gap: 3.5vw;
+
+    padding: 0 2vw;
+}
+
+.parceiro-icon{
+    height: 10vh;
+}

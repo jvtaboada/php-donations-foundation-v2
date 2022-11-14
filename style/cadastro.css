@@ -1,0 +1,78 @@
+.cad-body{
+    background-color: #023047;
+}
+
+.full-page{
+    display: flex;
+    flex-direction: column;
+
+    margin: auto;
+
+    color: #FFF;
+
+    width: 50vw;
+}
+
+.cad-title{
+    color: #FB8500;
+    text-align: center;
+}
+
+.cad-subtitle{
+    color: #fffafa;
+    font-style: italic;
+}
+
+.top-titles{
+    align-items: center;
+
+    border: solid 1px #FFF;
+
+    padding: 5px;
+}
+
+.form-box{
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: column;
+
+    margin: auto;
+
+    gap: 2vh;
+}
+
+.linha-form {
+    display: flex;
+}
+
+.label-input{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.cad-input{
+    height: 7vh;
+    width: 20vw;
+    border-radius: 0;
+
+    padding: 2%;
+    font-size: 90%;
+}
+
+.cad-label{
+    font-size: 120%;
+}
+
+.link-cancela:visited, .link-cancela{
+    color: #fff;
+
+}
+
+.cad-btn{
+    margin-top: 10px ;
+    width: 80%;
+    margin: auto;
+    background-color: green;
+}
