@@ -25,36 +25,34 @@
 
 .top-titles{
     align-items: center;
-
-    border: solid 1px #FFF;
-
     padding: 5px;
 }
 
+/* FORM RELATED */
 .form-box{
     padding-top: 5vh;
     display: flex;
     flex-direction: column;
-
     margin: auto;
-
     gap: 2vh;
+    width: 40vw;
 }
 
 .linha-form {
     display: flex;
+    gap: 10px;
 }
 
 .label-input{
     display: flex;
     flex-direction: column;
-
     width: 100%;
+    gap: 7px;
 }
 
 .cad-input{
     height: 40px;
-    width: 20vw;
+    width: 100%;
     border-radius: 0;
 
     padding: 2%;
@@ -84,7 +82,15 @@
     background-color: #14af14bb;
 }
 
+.cadastro{
+    width: 20vw;
+}
+
 /* LOGIN EXTRAS */
+
+.login{
+    width: 15vw;
+}
 
 .redireciona-cadastro{
     color: #1877f2;
@@ -93,4 +99,34 @@
 
 .redireciona-cadastro:visited{
     color: #1877f2;
+}
+
+/* DOACAO EXTRAS */
+.doa-body{
+    background-color: #023047;
+}
+
+.imagens{
+    margin: auto;
+}
+
+.imagens img{
+    margin-top: 60px;
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.grana-doa{
+    margin: auto;
+    width: 60%;
+}
+
+.tel-40{
+    width: 40%;
+}
+
+.nome-60{
+    width: 60%;
 }
