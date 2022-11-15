@@ -53,7 +53,7 @@
 }
 
 .cad-input{
-    height: 7vh;
+    height: 40px;
     width: 20vw;
     border-radius: 0;
 
@@ -66,13 +66,31 @@
 }
 
 .link-cancela:visited, .link-cancela{
-    color: #fff;
-
+    color: #ffffffa2;
 }
 
 .cad-btn{
-    margin-top: 10px ;
-    width: 80%;
-    margin: auto;
-    background-color: green;
+    margin-top: 2vh;
+    height: 40px;
+    background-color: #14af14;
+    border-radius: 2%;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 120%;
+}
+
+.cad-btn:hover{
+    background-color: #14af14bb;
+}
+
+/* LOGIN EXTRAS */
+
+.redireciona-cadastro{
+    color: #1877f2;
+    text-align: center;
+}
+
+.redireciona-cadastro:visited{
+    color: #1877f2;
 }
