@@ -11,6 +11,16 @@
 
             <link rel = "shortcut icon" type = "imagem/x-icon" href = "/img/user-icon.png"/>
             <title>Cadastro de usuário</title>
+
+            <script type="text/javascript" src="/js/jquery-1.2.6.pack.js"></script>
+            <script type="text/javascript" src="/js/jquery.maskedinput-1.1.4.pack.js"></script>
+
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $("#mascara-telefone").mask("(99) 99999-9999");
+                    $("#mascara-cpf").mask("999.999.999-99");
+                });
+            </script>
         </head>
 
         <body class="cad-body">
@@ -33,8 +43,7 @@
                     <div class="linha-form">
                         <div class="label-input">
                             <label class="cad-label">CPF</label>
-                            <input class="cad-input" type="number" name="cpf" placeholder="416.532.358-61" required/>
-                            <!-- adicionar mascara no camp -->
+                            <input class="cad-input" type="text" id="mascara-cpf" name="cpf" placeholder="416.532.358-61" required/>
                         </div>
                     </div>
                         
@@ -48,8 +57,7 @@
                     <div class="linha-form">
                         <div class="label-input">
                             <label class="cad-label">Telefone</label>
-                            <input class="cad-input" type="number" name="telefone" placeholder="(DDD) 9 1234-5678" required/>
-                            <!-- adicionar mascara no camp -->
+                            <input class="cad-input" id="mascara-telefone" type="text" name="telefone" placeholder="(DDD) 9 1234-5678" required/>
                         </div>
                     </div>
 
@@ -64,7 +72,6 @@
                         <div class="label-input">
                             <label class="cad-label">Confirme sua senha</label>
                             <input class="cad-input" type="password" name="senha" placeholder="coxinha123" required/>
-                            <!-- adicionar validação de senhas iguais -->
                         </div>
                     </div>
             
