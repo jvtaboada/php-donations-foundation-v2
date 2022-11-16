@@ -1,6 +1,7 @@
 <?php
-	$conexao = mysqli_connect("127.0.0.1:3306","root","root","bd_php-donation")
+	$conexao = mysqli_connect("127.0.0.1:3306","root","","bd_site")
 	or die ("Falha na conexão!");
+
     $manut = $_GET["manut"];
 
     switch ($manut) {
@@ -60,7 +61,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -110,6 +111,7 @@
     </center>
 </body>
 </html>
+
 <?php
 	mysqli_close($conexao);
 ?>

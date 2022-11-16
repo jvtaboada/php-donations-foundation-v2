@@ -1,6 +1,6 @@
 <?php
 
-    $conexao = mysqli_connect("127.0.0.1:3306","root","root","bd_php-donation")
+    $conexao = mysqli_connect("127.0.0.1:3306","root","","bd_site")
     or die ("Falha na conexão");
 
     $cnpj=$_POST["cnpj"];
@@ -66,5 +66,5 @@
 
     mysqli_query($conexao, $sql);
     mysqli_close($conexao);
-    header('location: catalogo.php');
+    header('location: /console-adm.php');
 ?>
