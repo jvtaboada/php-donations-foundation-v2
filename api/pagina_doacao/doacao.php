@@ -52,7 +52,7 @@
 
                     <div class="label-input tel-40">
                         <label class="cad-label">Telefone</label>
-                        <input class="cad-input" id="telefone" type="tel" name="telefone" placeholder="(11) 99184374" required />
+                        <input class="cad-input" id="telefone" type="tel" name="telefone" placeholder="(DDD) 9 9999-9999" required />
                     </div> 
                 </div>
 
@@ -80,16 +80,30 @@
                     <div class="label-input">
                         <label class="cad-label">Instituição</label>
 
-                    <!-- nesse select tem que fazer o esquema de ser dinamico -->
-                        <select class="cad-input" id="instituicao" name="instituicao" >
-                            <option value="Apae Jundiai" selected>Apae Jundiai</option>
-                            <option value="FebenJundiai">Feben Jundiai</option>
-                            <option value="monsenhor">MONSENHOR Jundiai</option>
+                        <select class="cad-input doa-input" id="instituicao" name="instituicao" >
+
+                            <?php
+                                $conexao = mysqli_connect("127.0.0.1:3306","root","","bd_site")
+                                or die ("Falha na conexão!");
+
+                                $sql = "SELECT * 
+                                        FROM instituicoes
+                                        ORDER BY nome";
+                                $tabela = mysqli_query($conexao, $sql);
+
+                                while ($linha = mysqli_fetch_array($tabela))
+                                {
+                            ?>
+                                <option value="<?php echo $linha["nome"]; ?>" selected><?php echo $linha["nome"]; ?></option>
+        
+                            <?php } ?>
+
                         </select>
+
                     </div>
                 </div>
 
-                <input class="cad-btn" type="submit" name="enviar" value="Contribuir"/>
+                <input class="cad-btn doa-btn" type="submit" name="enviar" value="Contribuir"/>
             </form>
         </main>
 
