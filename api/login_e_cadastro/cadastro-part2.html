@@ -9,140 +9,168 @@
 
         <link href="/style/reset.css" rel="stylesheet">
         <link href="/style/cadastro.css" rel="stylesheet">
+        <link href="/style/footer.css" rel="stylesheet">
 
         <link rel = "shortcut icon" type = "imagem/x-icon" href = "/img/user-icon.png"/>
         <title>Cadastro de usuário</title>
 
-        <!-- Adicionando Javascript -->
-    <script>
-    
-    function limpa_formulário_cep() {
-            //Limpa valores do formulário de cep.
-            document.getElementById('rua').value=("");
-            document.getElementById('bairro').value=("");
-            document.getElementById('cidade').value=("");
-            document.getElementById('uf').value=("");
-            document.getElementById('ibge').value=("");
-    }
-
-    function meu_callback(conteudo) {
-        if (!("erro" in conteudo)) {
-            //Atualiza os campos com os valores.
-            document.getElementById('rua').value=(conteudo.logradouro);
-            document.getElementById('bairro').value=(conteudo.bairro);
-            document.getElementById('cidade').value=(conteudo.localidade);
-            document.getElementById('uf').value=(conteudo.uf);
-        } //end if.
-        else {
-            //CEP não Encontrado.
-            limpa_formulário_cep();
-            alert("CEP não encontrado.");
-        }
-    }
+        <script>
         
-    function pesquisacep(valor) {
+        function limpa_formulário_cep() {
+                //Limpa valores do formulário de cep.
+                document.getElementById('rua').value=("");
+                document.getElementById('bairro').value=("");
+                document.getElementById('cidade').value=("");
+                document.getElementById('uf').value=("");
+                document.getElementById('ibge').value=("");
+        }
 
-        //Nova variável "cep" somente com dígitos.
-        var cep = valor.replace(/\D/g, '');
-
-        //Verifica se campo cep possui valor informado.
-        if (cep != "") {
-
-            //Expressão regular para validar o CEP.
-            var validacep = /^[0-9]{8}$/;
-
-            //Valida o formato do CEP.
-            if(validacep.test(cep)) {
-
-                //Preenche os campos com "..." enquanto consulta webservice.
-                document.getElementById('rua').value="...";
-                document.getElementById('bairro').value="...";
-                document.getElementById('cidade').value="...";
-                document.getElementById('uf').value="...";
-
-                //Cria um elemento javascript.
-                var script = document.createElement('script');
-
-                //Sincroniza com o callback.
-                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
-
-                //Insere script no documento e carrega o conteúdo.
-                document.body.appendChild(script);
-
+        function meu_callback(conteudo) {
+            if (!("erro" in conteudo)) {
+                //Atualiza os campos com os valores.
+                document.getElementById('rua').value=(conteudo.logradouro);
+                document.getElementById('bairro').value=(conteudo.bairro);
+                document.getElementById('cidade').value=(conteudo.localidade);
+                document.getElementById('uf').value=(conteudo.uf);
             } //end if.
             else {
-                //cep é inválido.
+                //CEP não Encontrado.
                 limpa_formulário_cep();
-                alert("Formato de CEP inválido.");
+                alert("CEP não encontrado.");
             }
-        } //end if.
-        else {
-            //cep sem valor, limpa formulário.
-            limpa_formulário_cep();
         }
-    };
+            
+        function pesquisacep(valor) {
 
-    </script>
-    </script>
+            //Nova variável "cep" somente com dígitos.
+            var cep = valor.replace(/\D/g, '');
+
+            //Verifica se campo cep possui valor informado.
+            if (cep != "") {
+
+                //Expressão regular para validar o CEP.
+                var validacep = /^[0-9]{8}$/;
+
+                //Valida o formato do CEP.
+                if(validacep.test(cep)) {
+
+                    //Preenche os campos com "..." enquanto consulta webservice.
+                    document.getElementById('rua').value="...";
+                    document.getElementById('bairro').value="...";
+                    document.getElementById('cidade').value="...";
+                    document.getElementById('uf').value="...";
+
+                    //Cria um elemento javascript.
+                    var script = document.createElement('script');
+
+                    //Sincroniza com o callback.
+                    script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+                    //Insere script no documento e carrega o conteúdo.
+                    document.body.appendChild(script);
+
+                } //end if.
+                else {
+                    //cep é inválido.
+                    limpa_formulário_cep();
+                    alert("Formato de CEP inválido.");
+                }
+            } //end if.
+            else {
+                //cep sem valor, limpa formulário.
+                limpa_formulário_cep();
+            }
+        };
+
+        </script>
+        </script>
+
+        <script type="text/javascript" src="/js/jquery-1.2.6.pack.js"></script>
+            <script type="text/javascript" src="/js/jquery.maskedinput-1.1.4.pack.js"></script>
+
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $("#cep").mask("99999-999");
+                });
+            </script>
     </head>
 
-    <body>
-        <h1>CADASTRO DE USUÁRIO</h1>
-        <h2>Endereço</h2>
+    <body class="cad-body">
+        <main class="full-page">
+            <div class="top-titles">
+                <h1 class="cad-title">CADASTRO DE USUÁRIO</h1>
+                <h2 class="cad-title cad-subtitle">Endereço</h2>
+            </div>
 
-        <!-- tratar isso no backend agora -->
-        <form action="./processamento.php" method="get">
-            <fieldset>
-                <div class="linha-form">   
-                    <div class="default-camp">
-                        <label>CEP</label>
-                        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" placeholder="13210-401" required/>
+            <!-- tratar isso no backend agora -->
+            <form class="form-box cadastro" action="./dados-ok.php" method="">
+
+                    <div class="linha-form">   
+                        <div class="label-input">
+                            <label class="cad-label">CEP</label>
+                            <input class="cad-input" name="cep" type="text" id="cep" value="" maxlength="9" onblur="pesquisacep(this.value);" placeholder="00000-000" required/>
+                        </div>
                     </div>
 
-                    <!-- adicionar mascara no camp -->
-                </div>
-
-                <div class="linha-form">
-                    <div class="default-camp">
-                        <label>Rua</label>
-                        <input name="rua" type="text" id="rua" size="60" placeholder="Rua dos Bobos" required />
+                    <div class="linha-form">
+                        <div class="label-input">
+                            <label class="cad-label">Rua</label>
+                            <input class="cad-input" name="rua" type="text" id="rua" placeholder="Rua dos Bobos" required />
+                        </div>
                     </div>
 
-                    <div class="default-camp">
-                        <label>Bairro</label>
-                        <input name="bairro" type="text" id="bairro" size="40" placeholder="Vila Regresso" required/>
-                    </div>
-                </div>
-
-                <div class="linha-form">
-                    <div class="default-camp">
-                        <label>Cidade</label>
-                        <input name="cidade" type="text" id="cidade" size="40" placeholder="Taboão da Serra" required />
+                    <div class="linha-form">
+                        <div class="label-input">
+                            <label class="cad-label">Bairro</label>
+                            <input class="cad-input" name="bairro" type="text" id="bairro" placeholder="Vila Regresso" required/>
+                        </div>
                     </div>
 
-                    <div class="default-camp">
-                        <label>Estado</label>
-                        <input name="uf" type="text" id="uf" size="2" placeholder="SP" required/>
+                    <div class="linha-form">
+                        <div class="label-input">
+                            <label class="cad-label">Cidade</label>
+                            <input class="cad-input" name="cidade" type="text" id="cidade" placeholder="Taboão da Serra" required />
+                        </div>
+
+                        <div class="label-input estado-20">
+                            <label class="cad-label">UF</label>
+                            <input class="cad-input" name="uf" type="text" maxlength="2" id="uf" placeholder="SP" required/>
+                        </div>
                     </div>
-                </div>
 
-                <div class="linha-form">
-                    <div class="default-camp">
-                        <label>Nº</label>    
-                        <input type="number" name="numero" size="5" placeholder="361, 1000" required/>
+                    <div class="linha-form">
+                        <div class="label-input numero-30">
+                            <label class="cad-label">Nº</label>    
+                            <input class="cad-input" type="number" name="numero" size="5" placeholder="361" required/>
+                        </div>
+
+                        <!-- formatar o tamanho dos camps -->
+
+                        <div class="label-input">
+                            <label class="cad-label">Complemento</label>    
+                            <input class="cad-input" type="text" name="complemento" placeholder="Bloco B, torre 2"/>
+                        </div>
                     </div>
 
-                    <!-- formatar o tamanho dos camps -->
+                    <input class="cad-btn" type="submit" name="enviar" value="Cadastre-se"/>
 
-                    <div class="default-camp">
-                        <label>Complemento</label>    
-                        <input type="text" name="complemento" placeholder="Bloco B, torre 2"/>
-                    </div>
-                </div>
+                    <a class="link-cancela" href="/index.html">Cancelar</a>
+            </form>
+        </main>
+        
+        <footer>
+            <div class="footer-line"></div>
 
-                <input class="submit-btn" type="submit" name="enviar" value="Cadastre-se"/>
+            <div class="social-icon-wrapper">
+                <img class="social-icon" src="/img/insta-icon.webp">
+                <img class="social-icon" src="/img/face-icon.png">
+                <img class="social-icon" src="/img/linkedin-icon.png">
+                <img class="social-icon" src="/img/ghub-icon.webp">
+            </div>
 
-            </fieldset>
-        </form>
+            <span class="foot-text">
+                © PHP Donations Foundation Inc 2022. <br>All Rights Reserved.
+            </span>
+        </footer>
     </body>
 </html>
