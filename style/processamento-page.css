@@ -1,7 +1,5 @@
-a{
-    text-decoration: none;
-    color: inherit;
-    cursor: help;
+.main-title{
+    padding-bottom: 5px;
 }
 
 .processa-body{
@@ -39,43 +37,4 @@ a{
 .comprovante-email{
     font-size: 90%;
     color: rgb(53, 49, 49);
-}
-
-.valores-recibo{
-    border-top: 1px solid #A9A9A9;
-    border-top-width: thin;
-    margin-top: 25px;
-    padding-top: 8px;
-
-    display: flex;
-    justify-content: center;
-
-    font-style: italic;
-    font-size: 85%;
-}
-
-.valor-descontado{
-    color: #F08080;
-}
-
-.valor-doacao{
-    color: #797878;
-}
-
-.valor-total{
-    color: #3CB371;
-}
-
-.desc-esquerda{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    margin-right: 100px;
-}
-
-.vlr-direita{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
 }
