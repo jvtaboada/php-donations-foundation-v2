@@ -14,16 +14,6 @@
         <link rel = "shortcut icon" type = "imagem/x-icon" href = "/img/doacao-icon.png"/>
         <title>Faça sua contribuição!</title>
 
-        <script type="text/javascript" src="/js/jquery-1.2.6.pack.js"></script>
-        <script type="text/javascript" src="/js/jquery.maskedinput-1.1.4.pack.js"></script>
-
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $("#telefone").mask("(99) 99999-9999");
-                $("#valor").mask("999.999.999,00");
-            });
-        </script>
-
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
         <script src="/js/jquery.maskMoney.min.js" type="text/javascript"></script>
         <script>
@@ -80,7 +70,7 @@
                     <div class="label-input">
                         <label class="cad-label">Instituição</label>
 
-                        <select class="cad-input doa-input" id="instituicao" name="instituicao" >
+                        <select class="cad-input doa-input" id="instituicao" name="instituicao" required>
 
                             <option value="" selected disabled hidden>Selecione uma instituição</option>
 
@@ -137,6 +127,8 @@
             </span>
             
         </footer>
+
+        <script src="./teste.js"></script>
     </body>
 
 </html>
