@@ -82,21 +82,35 @@
 
                         <select class="cad-input doa-input" id="instituicao" name="instituicao" >
 
+                            <option value="" selected disabled hidden>Selecione uma instituição</option>
+
                             <?php
-                                $conexao = mysqli_connect("127.0.0.1:3306","root","","bd_site")
-                                or die ("Falha na conexão!");
+                                $a = $_GET['a'];
 
-                                $sql = "SELECT * 
-                                        FROM instituicoes
-                                        ORDER BY nome";
-                                $tabela = mysqli_query($conexao, $sql);
+                                if(isset($_GET['a'])){
+                                    $a = $_GET['a'];
+                                } else{
+                                    $a = "";
+                                }
 
-                                while ($linha = mysqli_fetch_array($tabela))
-                                {
-                            ?>
-                                <option value="<?php echo $linha["nome"]; ?>" selected><?php echo $linha["nome"]; ?></option>
-        
-                            <?php } ?>
+                               $conexao = mysqli_connect("127.0.0.1:3306","root","","bd_site")
+                               or die ("Falha na conexão!");
+
+                               $sql = "SELECT * 
+                                       FROM instituicoes
+                                       ORDER BY nome";
+                               $tabela = mysqli_query($conexao, $sql);
+
+                            
+
+                               while ($linha = mysqli_fetch_array($tabela))
+                               {
+                           ?>
+                               <option value="<?php echo $linha["nome"]; ?>" <?php if($a == $linha["nome"]) echo "selected" ?>  >  <?php echo $linha["nome"]; ?> </option>
+       
+                           <?php } 
+
+                           ?>
 
                         </select>
 
