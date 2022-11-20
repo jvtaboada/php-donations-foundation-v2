@@ -71,7 +71,7 @@
                 <div class="linha-form">
                     <div class="label-input grana-doa">
                         <label class="cad-label">Valor</label>
-                        <input class="cad-input" name="valor" type="text" id="valor" data-thousands="." data-decimal="," data-prefix="R$ " placeholder="R$ 0,00"/>
+                        <input class="cad-input" name="valor" type="text" id="valor" data-thousands="." data-decimal="," data-prefix="R$ " placeholder="R$ 0,00" required/>
                     </div>
                 </div>
 
