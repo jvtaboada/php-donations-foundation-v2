@@ -76,7 +76,7 @@
             <img class="img-check" src="/img/check-icone.png" title="Valor Transferido com sucesso"> 
 
             <p class="transacao-sucesso">
-                Sua transação no valor de <b> R$ <?php echo $valor?> </b> foi enviada com sucesso para a instituição <?php echo $instituicao?>.
+                Sua transação no valor de <b><?php echo $valor?> </b> foi enviada com sucesso para a instituição <?php echo $instituicao?>.
             </p>
 
             <span class="comprovante-email">Fique tranquilo, o recibo da sua doação foi encaminhado para o e-mail <?php echo $email ?></span>
