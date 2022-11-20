@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+    <array>
+        <materia>
+            <aula>
+                <imagem> img/fatec-icon.png </imagem>
+            </aula>
+            <aula>
+                <imagem> img/cps-icon.png </imagem>
+            </aula>
+            <aula>
+                <imagem> img/grendac-icon.png </imagem>
+            </aula>
+            <aula>
+                <imagem> img/jundiai-icon.png </imagem>
+            </aula>
+            <aula>
+                <imagem> img/sp-icon.png </imagem>
+            </aula>
+        </materia>
+    </array>

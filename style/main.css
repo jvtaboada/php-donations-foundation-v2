@@ -63,6 +63,8 @@
 .card-wrapper{
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
 
     padding-bottom: 3vh;
 }
@@ -103,6 +105,7 @@
 
 .parceiros-wrapper{
     display: flex;
+    flex-wrap: wrap;
     gap: 3.5vw;
 
     padding: 0 2vw;

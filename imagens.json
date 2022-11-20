@@ -1,0 +1,27 @@
+[
+    {
+        "titulo": "João",
+        "imagem": "img/integrante-joao.jpg",
+        "cargo": "Designer & Frontend Dev"
+    },
+    {
+        "titulo": "Lucas",
+        "imagem": "img/integrante-lucas.jpg",
+        "cargo": "Backend Dev"
+    },
+    {
+        "titulo": "Max",
+        "imagem": "img/integrante-max.jpg",
+        "cargo": "Software Engineer"
+    },
+    {
+        "titulo": "Buchecha",
+        "imagem": "img/integrante-vini.jpg",
+        "cargo": "Database Administrator"
+    },
+    {
+        "titulo": "Buchecha",
+        "imagem": "img/integrante-vini.jpg",
+        "cargo": "Database Administrator"
+    }
+]

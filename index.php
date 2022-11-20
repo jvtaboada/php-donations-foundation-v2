@@ -1,6 +1,16 @@
-<!DOCTYPE html>
+<?php
 
+$arquivo = file_get_contents('imagens.json');
+$json = json_decode($arquivo);
+
+$link = "imagens.xml";
+$xml = simplexml_load_file($link)->materia;
+
+?>
+
+<!DOCTYPE html>
 <html lang="pt-BR">
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +21,7 @@
         <link rel="stylesheet" href="style/main.css">
         <link rel="stylesheet" href="style/footer.css">
 
-        <link rel = "shortcut icon" type = "imagem/x-icon" href = "/img/doacao-icon.png"/>
+        <link rel="shortcut icon" type="imagem/x-icon" href="/img/doacao-icon.png" />
         <title>PHP Donations Foundation</title>
     </head>
 
@@ -33,9 +43,9 @@
                 <a href="api/login_e_cadastro/login.html"><button class="text-header btn-nav">Login</button></a>
                 <a href="api/login_e_cadastro/cadastro-part1.html"><button class="text-header btn-nav btn-inverso">Cadastre-se</button></a>
             </div>
-        </header> 
+        </header>
 
-    
+
         <main class="main-section">
             <div class="nav-main">
                 <a class="no-visited" href="#section-ideia">A IDEIA</a>
@@ -44,7 +54,7 @@
                 <p>|</p>
                 <a class="no-visited" href="#section-parceiros">PARCEIROS</a>
             </div>
-            
+
             <section id="section-ideia">
                 <div class="big-title ideia-title">
                     <img class="ideia-icon" src="/img/ideia.png">
@@ -63,49 +73,16 @@
                 <h2 class="big-title sobre-title">Sobre nós</h2>
 
                 <div class="card-wrapper">
-                    <div class="card-integrante">
-                        <img class="icone-integrante" src="img/integrante-joao.jpg">
-
-                        <div class="desc-integrante">
-                            <h3>João Taboada</h3>
-                            <span>
-                                Designer & Frontend Developer
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="card-integrante">
-                        <img class="icone-integrante" src="img/integrante-lucas.jpg" alt="Minha Figura">
-
-                        <div class="desc-integrante">
-                            <h3>Lucas Geremias</h3>
-                            <span>
-                                Database Analyst
-                            </span>
-                         </div>
-                    </div>
-
-                    <div class="card-integrante">
-                        <img class="icone-integrante" src="img/integrante-max.jpg" alt="Minha Figura">
-
-                        <div class="desc-integrante">
-                            <h3>Max Carmelo</h3>
-                            <span>
-                                Backend Developer
-                            </span>
-                         </div>
-                    </div>
-
-                    <div class="card-integrante">
-                        <img class="icone-integrante" src="img/integrante-vini.jpg" alt="Minha Figura">
-
-                        <div class="desc-integrante">
-                            <h3>Vinicius Narciso</h3>
-                            <span>
-                                Software Architecture
-                            </span>
-                         </div>
-                    </div>
+                    <?php foreach ($json as $registro) {
+                        echo "<div class='card-integrante'>
+                                <img class='icone-integrante' src='$registro->imagem'>
+                                <div class='desc-integrante'>
+                                    <h3><b></b>$registro->titulo</h3>
+                                    <span>$registro->cargo</span>
+                                </div>
+                            </div>";
+                    }
+                    ?>
                 </div>
 
             </section>
@@ -114,15 +91,11 @@
                 <h2 class="parceiros-title big-title">Uma parceria com:</h2>
 
                 <div class="parceiros-wrapper">
-
-                    <img class="parceiro-icon" src="img/fatec-icon.png">
-                    <img class="parceiro-icon" src="img/cps-icon.png">
-                    <img class="parceiro-icon" src="img/grendac-icon.png">
-                    <img class="parceiro-icon" src="img/jundiai-icon.png">
-
-                    <img class="parceiro-icon" src="img/sp-icon.png">
+                    <?php foreach ($xml->aula as $aula) {
+                        echo "<img class='parceiro-icon' src='" . $aula->imagem . "'></img><br/>";
+                    }
+                    ?>
                 </div>
-                
             </section>
         </main>
 
@@ -139,7 +112,8 @@
             <span class="foot-text">
                 © PHP Donations Foundation Inc 2022. <br>All Rights Reserved.
             </span>
-            
+
         </footer>
     </body>
+
 </html>
