@@ -1,3 +1,18 @@
+<?php
+if (isset($_GET['erro'])) {
+	$erro = $_GET['erro'];
+} else {
+	$erro = 0;
+}
+
+if ($erro == 1) {
+	$msg = "Login e/ou Senha invalido(s).";
+} else {
+    $msg = "";
+}
+	
+?>
+
 <!DOCTYPE html>
 
 <html lang="pt-BR">
@@ -24,7 +39,7 @@
                 <h2 class="cad-title cad-subtitle">Entre na PHP Donations Foundation</h2>
             </div>
 
-            <form class="form-box login" action="./cadastro-part2.html" method="post">
+            <form class="form-box login" action="./validaLogin.php" method="post">
 
                 <div class="linha-form">
                     <div class="label-input">
@@ -40,12 +55,15 @@
                     </div>
                 </div>
 
+                <?php echo "<p><font color='red'>". $msg ."</font></p>"; ?>
+
                 <input class="cad-btn" type="submit" value="Entrar"/>
 
                 <a class="redireciona-cadastro" href="./cadastro-part1.html">Não tem uma conta?</a>
 
             </form>
 
+            
         </main>
         
         <footer>

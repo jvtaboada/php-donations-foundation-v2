@@ -1,3 +1,12 @@
+<?php
+    session_start();
+
+    if( ( (!isset($_SESSION["logado"])) || ($_SESSION["logado"] != TRUE) ) && ( (!isset($_SESSION["adm_logado"])) || ($_SESSION["adm_logado"] != TRUE) ) )
+    {
+        header("Location: /api/login_e_cadastro/login.php");
+    }
+?>
+
 <!DOCTYPE html>
 
 <html lang="pt-BR">

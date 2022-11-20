@@ -1,4 +1,10 @@
 <?php
+    session_start();
+
+    if( (!isset($_SESSION["adm_logado"])) || ($_SESSION["adm_logado"] != TRUE) ){
+        header("Location: /api/login_e_cadastro/login.php");
+    } 
+
 	$conexao = mysqli_connect("127.0.0.1:3306","root","","bd_site")
 	or die ("Falha na conexão!");
 ?>
